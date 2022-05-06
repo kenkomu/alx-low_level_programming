@@ -21,7 +21,7 @@ int main(void)
         {
                 printf("Last digit of %d is 0 and is greater than 5",n);
         }
-	if (i < 6 $$ i!=0)
+	if (i < 6 )
         {
                 printf("Last digit of %d is %i and is greater than 5",n,i);
         }
