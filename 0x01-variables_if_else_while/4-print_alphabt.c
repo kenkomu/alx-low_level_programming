@@ -1,9 +1,8 @@
 #include <stdio.h>
 /**
  * main - main block
- * Description: get a random number and check its last digit, compare it with 5
- * followed by a new line 
- * return: 0
+ * Description: Get a random number and check its last digit, compare it with 5
+ * Return: 0
  */
 int main(void)
 {
