@@ -10,7 +10,7 @@ int main(void)
 	char n ='o';
 	while (n <= 10)
 	{
-		printf("%d\n",n);
+		printf("%c\n",n);
 		n++;
 	}
 	return (0);
