@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - Entry point 
+ * main - main block 
  * Description: print letters in lowercase
  * and then in uppercase, followed by a new line
  * Return: 0
