@@ -68,4 +68,4 @@ int _length(char *str)
 	return (i);
 }
 
-#endif
+#endif /*MAIN_H_*/
