@@ -13,19 +13,19 @@ int _pow(int x,int y)
 {
 	if(y < 0)
 	{
-		return(-1)
+		return(-1);
 	}
-	elseif (y == 0)
+	else if (y == 0)
 	{
-		return(1)
+		return(1);
 	}
 	else
 	{
 		y--;
 		x = x* _pow(x,y);
-		return(x)
+		return(x);
 	}
-	return(0)
+	return(0);
 }
 unsigned int binary_to_uint(const char *b)
 {
@@ -38,8 +38,6 @@ unsigned int binary_to_uint(const char *b)
 	}
 
 	n = strlen(b) - 1;
-
-	/* Realizamos la operacion para hallar suma */
 	for (x = 0, i = 0; n >= x; n--)
 	{
 		switch (b[i])
