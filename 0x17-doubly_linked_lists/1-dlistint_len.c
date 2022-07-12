@@ -1,8 +1,8 @@
 #include "lists.h"
 /**
- * dlistint_len -  the number of elements in a dlistint_t linked list
+ * dlistint_len -   number of elements in a dlistint_t linked list
  * @h: list to browse
- * return: the size of list
+ * return: size of the list
  */
 size_t dlistint_len(const dlistint_t *h)
 {
