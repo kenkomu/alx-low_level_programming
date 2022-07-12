@@ -5,7 +5,7 @@
  * Return: sum of tehe linked list
  */
 
-int sum_dlistint(dlistint_t *head);
+int sum_dlistint(dlistint_t *head)
 {
 	int sum = 0;
 
