@@ -9,7 +9,7 @@
 
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	insigned int cLoop = 0;
+	unsigned int cLoop = 0;
 
 	while (head != NULL)
 	{
