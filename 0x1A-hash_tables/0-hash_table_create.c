@@ -1,7 +1,16 @@
 #include "hash_tables.h"
+/**
+ * hash_table_create - function that create the hash table
+ * 
+ * @size - the size of the array
+ * 
+ * Return: pointer to a naw hash table or NULL if fail
+ */
 
 hash_table_t *hash_table_create(unsigned long int size){
-    int size;
-    struct hash_node_s hash_table_t[size];
-    for 
+    hash_table_t *ht;
+    ht = malloc (sizeof(hash_table_t));
+    if (ht = NULL)
+        return NULL
+
 }
