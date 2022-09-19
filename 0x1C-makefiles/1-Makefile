@@ -3,4 +3,6 @@
 CC := gcc
 SRCS := foo.c
 all : main.c school.c
+    CC := gcc
+    SRCS := foo.c
 	gcc main.c school.c -o school
