@@ -1,7 +1,15 @@
-#This is the target that compiles our executable
+# CC specifies which compiler we're using
 CC = gcc
+
+# SRC specifies which files to compile as part of the project
 SRC = main.c school.c
+
+# OBJ specifies objects files' name
 OBJ = ${SRC:.c=.o}
-NAME = holberton
+
+# OBJ specifies the name of our executable
+NAME = school
+
+# This is the target that compiles our executable
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
