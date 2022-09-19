@@ -1,8 +1,5 @@
 #This is the target that compiles our executable
-
-CC := gcc
-SRCS := foo.c
-all : main.c school.c
-    CC := gcc
-    SRCS := foo.c
-	gcc main.c school.c -o school
+CC = gcc
+SRC = main.c school.c
+all: $(SRC)
+	$(CC) $(SRC) -o school
