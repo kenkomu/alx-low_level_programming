@@ -1,0 +1,24 @@
+# CC specifies which compiler we're using
+CC = gcc
+
+# SRC specifies which files to compile as part of the project
+SRC = main.c school.c
+
+# OBJ specifies objects files' name
+OBJ = ${SRC:.c=.o}
+
+# OBJ specifies the name of our executable
+NAME = school
+
+# RM specifies all the program to delete files
+RM = rm -f
+
+# This is the target that compiles our executable
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+clean:
+	$(RM) *~ $(NAME)
+oclean:
+	$(RM) $(OBJ)
+fclean: clean oclean
+re: oclean all
