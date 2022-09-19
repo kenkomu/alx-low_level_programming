@@ -1,0 +1,6 @@
+#This is the target that compiles our executable
+
+CC := gcc
+SRCS := foo.c
+all : main.c school.c
+	gcc main.c school.c -o school
