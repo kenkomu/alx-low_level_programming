@@ -1,0 +1,7 @@
+#This is the target that compiles our executable
+CC = gcc
+SRC = main.c school.c
+OBJ = ${SRC:.c=.o}
+NAME = holberton
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
