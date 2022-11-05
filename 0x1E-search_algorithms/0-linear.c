@@ -23,4 +23,6 @@ int linear_search(int *array, size_t size, int value);
 		if (array(loop) == value)
 			return (array(loop));
 	}
+
+	return (-1);
 }
