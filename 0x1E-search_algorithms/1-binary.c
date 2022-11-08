@@ -1,8 +1,31 @@
 #include "search_algos.h"
 
 /**
- * binary_search - searches for a value in a sorted array
- *                 of integers using the Binary search algorithm
+ * print_array - print all value of an array in line
+ *
+ * @array: a pointer to the first element of the array to search in
+ * @start: first element index of the array
+ * @end: last element index of the array
+ */
+
+void print_array(int *array, int start, int end)
+{
+	int cLoop;
+
+	printf("Searching in array: ");
+	for (cLoop = start; cLoop <= end; cLoop++)
+	{
+		printf("%d", array[cLoop]);
+
+		if (cLoop < end)
+			printf(", ");
+	}
+	printf("\n");
+}
+
+/**
+ * binary_search - searches for a value in a sorted array of integers
+ *                 using the Binary search algorithm
  *
  * @array: a pointer to the first element of the array to search in
  * @size: number of elements in array
@@ -10,30 +33,26 @@
  *
  * Return: the first index where value is located
  */
-
 int binary_search(int *array, size_t size, int value)
-	{
-	size_t cloop;
-	int size = sizeof(array) / sizeof(array[0]);
-	int lastElem = array[size - 1];
-	int firstElem = array[0];
+{
+	size_t cLoop;
+	int start = 0, end = size - 1;
 
 	if (array == NULL)
-	{
 		return (-1);
-	}
-	while (lastElem <= firstElem)
+
+	while (start <= end)
 	{
-		int mid =  +(firstElem - lastElem) / 2;
+		print_array(array, start, end);
+		cLoop = start + (end - start) / 2;
 
-		if (array[mid] == value)
-			return (mid);
+		if (array[cLoop] == value)
+			return (cLoop);
 
-		if (array[mid] < value)
-			lastElem = mid + 1;
-
+		if (array[cLoop] > value)
+			end = cLoop - 1;
 		else
-			firstElem = mid - 1;
+			start = cLoop + 1;
 	}
 
 	return (-1);
