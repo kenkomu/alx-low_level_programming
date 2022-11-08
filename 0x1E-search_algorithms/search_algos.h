@@ -21,7 +21,7 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
-
+void print_array(int *array, int start, int end);
 int binary_search(int *array, size_t size, int value);
 int exponential_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int value);
