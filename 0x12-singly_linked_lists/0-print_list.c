@@ -6,14 +6,18 @@
  * @param h 
  * @return size_t 
  */
-size_t print_list(const list_t *h);
-new = malloc(sizeof(list_t));
-    if (new == NULL)
-    {
-        printf("Error\n");
-        return (1);
+size_t print_list(const list_t *h)
+{
+    while(h != NULL){
+        printf("%s\n", h->str);
+        h = h->next;
     }
-new->str = strdup("Hello");
-new->len = 5;
-new->next = head;
-head = new;
+};
+int main (int argc, const char *argv[]){
+    struct list_s* first = NULL;
+    first = malloc(sizeof(list_t));
+    first->next = NULL;
+    first->str = "hello";
+    return 0;
+
+}
