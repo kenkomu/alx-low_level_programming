@@ -13,11 +13,25 @@ size_t print_list(const list_t *h)
         h = h->next;
     }
 };
-int main (int argc, const char *argv[]){
+int main (){
+    struct list_s* head = NULL;
     struct list_s* first = NULL;
-    first = malloc(sizeof(list_t));
-    first->next = NULL;
-    first->str = "hello";
-    return 0;
+    struct list_s* last = NULL;
 
+    head = malloc(sizeof(list_t));
+    first = malloc (sizeof(list_t));
+    last = malloc(sizeof(list_t));
+
+    head->str = "ken";
+    head->next = first;
+
+    first->str = "komu";
+    first->next = last;
+
+    last->str = "NJoroge";
+    last->next = NULL;
+
+    print_list(head);
+
+    return 0;
 }
