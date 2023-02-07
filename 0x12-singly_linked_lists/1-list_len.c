@@ -3,19 +3,19 @@
 #include "lists.h"
 
 /**
- * print_list - prints all the elements of a list_t list
+ * list_len - returns the number of elements in a linked list_t list.
  *
  * @h: list to browse
  *
  * Return: size of the list
  */
-size_t print_list(const list_t *h)
+size_t list_len(const list_t *h)
 {
 	if (!h)
 		return (0);
 	if (h->next == NULL)
 	{
-		printf("[%d]" h->len, );
+		printf("[%d]" h->len);
 		return (1);
 	}
 	else
@@ -24,6 +24,6 @@ size_t print_list(const list_t *h)
 			printf("[0] %s\n", "(nil)");
 		else
 			printf("[%d]", h->len);
-		return (print_list(h->next) + 1);
+		return (list_len(h->next) + 1);
 	}
 }
