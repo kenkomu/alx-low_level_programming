@@ -13,13 +13,13 @@ size_t print_dlistint(const dlistint_t *h)
 		return (0);
 
 	dlistint_t *traverser = h;
-	size_t count = 0;
+	size_t size = 0;
 
 	while (traverser != NULL)
 	{
 		printf("%d\n", traverser->n);
 		traverser = traverser->next;
-		count++;
+		size++;
 	}
-	return (count);
+	return (size);
 }
