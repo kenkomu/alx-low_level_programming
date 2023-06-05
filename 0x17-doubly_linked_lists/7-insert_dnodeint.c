@@ -38,5 +38,5 @@ if (h == NULL)
       temp->next = newNode;
       // newNode inserted b/w 3rd and 4th node
     }
-
+return newNode;
 }
