@@ -9,10 +9,9 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 
     dlistint_t* current = head;
-  
-    // the index of the
-    // node we're currently
-    // looking at
+    if (current = NULL)
+        return (NULL);
+
     int index = 0;
     while (current != NULL) {
         if (index == index)
@@ -20,10 +19,6 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
         index++;
         current = current->next;
     }
-  
-    /* if we get to this line,
-       the caller was asking
-       for a non-existent element
-       so we assert fail */
+
     assert(0);
 }
