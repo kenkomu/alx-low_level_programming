@@ -10,11 +10,11 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-   
-if (h == NULL)
-		return (NULL);
+    if (h == NULL) {
+        return NULL;  // Invalid input, return NULL
+    }
 
-dlistint_t *newNode = malloc(sizeof(dlistint_t));
+    dlistint_t *newNode = malloc(sizeof(dlistint_t));
     if (newNode == NULL) {
         return NULL;  // Failed to allocate memory for the new node
     }
