@@ -1,5 +1,43 @@
 #include"lists.h"
 /**
+ * _dlistint_len - the number of elements in a linked list_t list
+ *
+ * @h: list to browse
+ *
+ * Return: size of the list
+ */
+size_t _dlistint_len(const dlistint_t *h)
+{
+	if (h == NULL)
+		return (0);
+	else
+		return (_dlistint_len(h->next) + 1);
+}
+
+/**
+ * _get_nodeint_at_index - the nth node of a listint_t linked list
+ *
+ * @head: first element
+ * @index: element's number
+ *
+ * Return: a node
+ */
+dlistint_t *_get_nodeint_at_index(dlistint_t *head, unsigned int index)
+{
+	unsigned int cLoop = 0;
+
+	while (head != NULL)
+	{
+		if (index == cLoop)
+			return (head);
+		head = head->next;
+		cLoop++;
+	}
+
+	return (NULL);
+}
+
+/**
  * insert_dnodeint_at_index - inserts a new node at a given position
  *
  * @h: first element
