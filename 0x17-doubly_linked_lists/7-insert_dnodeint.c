@@ -10,49 +10,34 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-    if (h == NULL) {
-        return NULL;  // Invalid input, return NULL
-    }
+	dlistint_t *new, *before;
+	int length;
 
-    dlistint_t *newNode = malloc(sizeof(dlistint_t));
-    if (newNode == NULL) {
-        return NULL;  // Failed to allocate memory for the new node
-    }
+	new = _createNode(n);
 
-    newNode->n = n;
-    newNode->prev = NULL;
-    newNode->next = NULL;
+	if (h == NULL || new == NULL)
+		return (NULL);
 
+	length = _dlistint_len(*h);
 
-    if (idx == 0) {
-        // Insert at the beginning
-        newNode->next = *h;
-        if (*h != NULL) {
-            (*h)->prev = newNode;
-        }
-        *h = newNode;
-    } else {
-        dlistint_t *current = *h;
-        unsigned int currentIdx = 0;
+	if (idx == 0)
+	{
+		return (add_dnodeint(h, n));
+	}
+	else if (idx > (unsigned int) length)
+	{
+		return (NULL);
+	}
+	else
+		before = _get_nodeint_at_index(*h, idx - 1);
 
-        while (current != NULL && currentIdx < idx) {
-            current = current->next;
-            currentIdx++;
-        }
+	new->prev = before;
+	new->next = before->next;
 
-        if (currentIdx < idx) {
-            // Index is out of bounds, cannot insert
-            free(newNode);
-            return NULL;
-        }
+	if (before->next == NULL)
+		return (add_dnodeint_end(h, n));
+	before->next->prev = new;
+	before->next = new;
 
-        newNode->next = current;
-        newNode->prev = current->prev;
-        if (current != NULL) {
-            current->prev->next = newNode;
-        }
-        current->prev = newNode;
-    }
-
-    return newNode;
+	return (new);
 }
