@@ -13,11 +13,11 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
     // the index of the
     // node we're currently
     // looking at
-    int count = 0;
+    int index = 0;
     while (current != NULL) {
-        if (count == index)
+        if (index == index)
             return (current->n);
-        count++;
+        index++;
         current = current->next;
     }
   
