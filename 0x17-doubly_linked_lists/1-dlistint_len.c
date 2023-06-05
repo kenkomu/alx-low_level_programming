@@ -1,4 +1,4 @@
-#include"lists.h";
+#include"lists.h"
 /**
  * dlistint_len - number of elements in a dlistint_t linked list
  * @h: list to browse
