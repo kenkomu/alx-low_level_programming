@@ -10,33 +10,49 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-    dlistint_t *newNode = (dlistint_t *) malloc (sizeof (dlistint_t));
-    newNode->n = n;
-    newNode->next = NULL;
+   
 if (h == NULL)
 		return (NULL);
 
-	int length = _dlistint_len(*h);
-
-    if (idx == 0)
-    {
-      newNode->next = *h;
-      *h = newNode;
+dlistint_t *newNode = malloc(sizeof(dlistint_t));
+    if (newNode == NULL) {
+        return NULL;  // Failed to allocate memory for the new node
     }
-    else
-    {
-      // temp used to traverse the Linked List
-      dlistint_t *temp = *h;
 
-      // traverse till the nth node
-      while (--idx)
-	temp = temp->next;
+    newNode->n = n;
+    newNode->prev = NULL;
+    newNode->next = NULL;
 
-      // assign newNode's next to nth node's next
-      newNode->next = temp->next;
-      // assign nth node's next to this new node
-      temp->next = newNode;
-      // newNode inserted b/w 3rd and 4th node
+
+    if (idx == 0) {
+        // Insert at the beginning
+        newNode->next = *h;
+        if (*h != NULL) {
+            (*h)->prev = newNode;
+        }
+        *h = newNode;
+    } else {
+        dlistint_t *current = *h;
+        unsigned int currentIdx = 0;
+
+        while (current != NULL && currentIdx < idx) {
+            current = current->next;
+            currentIdx++;
+        }
+
+        if (currentIdx < idx) {
+            // Index is out of bounds, cannot insert
+            free(newNode);
+            return NULL;
+        }
+
+        newNode->next = current;
+        newNode->prev = current->prev;
+        if (current != NULL) {
+            current->prev->next = newNode;
+        }
+        current->prev = newNode;
     }
-return newNode;
+
+    return newNode;
 }
